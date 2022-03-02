@@ -1,0 +1,158 @@
+<mvc:View controllerName="cl.arauco.mmlog.controller.View1" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.commons"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:layout="sap.ui.layout">
+	
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <m:Title id="_IDGenTitle1"
+                text="Entrega: 1230123"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:titleBreadcrumbs>
+			<m:Breadcrumbs id="_IDGenBreadcrumbs1" currentLocationText="Entrega">
+            <m:Link id="_IDGenLink1" text="Principal" press="navToPrinci"/>
+				<m:Link id="_IDGenLink11" text="Pedido" press="onPressNav"/>
+			</m:Breadcrumbs>
+		</semantic:titleBreadcrumbs>
+
+        <semantic:headerContent>
+        <layout:HorizontalLayout id="_IDGenHorizontalLayout1" allowWrapping="true">
+				<layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiMediumMarginEnd">
+					<m:ObjectAttribute id="_IDGenObjectAttribute1" title="Incoterm" text="EDP"/>
+					<m:ObjectAttribute id="_IDGenObjectAttribute2" title="Transporte" text="Terrestre"/>
+					<m:ObjectAttribute id="_IDGenObjectAttribute3" title="Interlocutor" text="Nacional"/>
+                    <m:ObjectAttribute id="_IDGenObje2ctAttribute3" title="Proveedor Logístico" text="DHL"/>
+				</layout:VerticalLayout>
+		</layout:HorizontalLayout>
+        </semantic:headerContent>
+    
+    <m:IconTabBar id="_IDGenIconTabBar1" 
+                      headerMode="Inline"
+		              expanded="{device>/isNoPhone}"
+		              class="sapUiResponsiveContentPadding">
+        <m:items>
+			<m:IconTabFilter id="_IDGenIconTabFilter1"
+				text="Seguimiento"
+				key="info"
+				count="">
+	<m:content>
+	<m:Panel id="_IDGenPanel1">
+		<m:Label id="_IDGenLabel1" text="" />
+        <m:VBox height="20%">
+        <ProcessFlow id="processflow" wheelZoomable="false" nodePress="onNodePress" scrollable="false" nodes="{flow>/nodes}" lanes="{flow>/lanes}">
+							<nodes>
+								<ProcessFlowNode id="_IDGenProcessFlowNode1" visible="false" laneId="{flow>lane}" nodeId="{flow>id}" title="{flow>title}" titleAbbreviation="{flow>titleAbbreviation}"
+									 state="{flow>state}" texts="{flow>texts}" stateText="{flow>stateText}" highlighted="{flow>highlighted}"
+									focused="{flow>focused}" type="{flow>type}"/>
+							</nodes>
+							<lanes>
+								<ProcessFlowLaneHeader id="_IDGenProcessFlowLaneHeader1" press="onDefaultDialogPress1" laneId="{flow>id}" iconSrc="{flow>icon}" text="{flow>label}" position="{flow>position}">
+                                <dependents>
+                                    <m:Text text="{flow>label}"/>
+                                </dependents>
+                                </ProcessFlowLaneHeader>
+                               </lanes>
+                               <dependents>
+                               
+                               </dependents>
+						</ProcessFlow>
+                        
+        </m:VBox>
+	</m:Panel>
+    <m:Panel id="_IDGenPanel122" height="100%">
+    
+    </m:Panel>
+    </m:content>
+    </m:IconTabFilter>
+        </m:items>
+        <m:items>
+			<m:IconTabFilter id="_IDGenIconTabFilter2"
+				text="Materiales"
+				key="info"
+				count="">
+<m:Table
+                id="table"
+                width="auto"
+                items="{
+                    path: 'TestModel>/ItemsMaster/0/Entregas/0/Materiales'
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+                <m:columns>
+                    <m:Column id="name1Column">
+                        <m:Text text="Posición" id="name2ColumnTitle"/>
+                    </m:Column>
+                    <m:Column id="nameColumn">
+                        <m:Text text="Material" id="nameColumnTitle"/>
+                    </m:Column>
+                    <m:Column id="nameColumn3">
+                        <m:Text text="Texto" id="nameColumnTitle3"/>
+                    </m:Column>
+                    <m:Column id="nameColumn33">
+                        <m:Text text="Cantidad Solicitada" id="nameColumnTitle33"/>
+                    </m:Column>
+                    <m:Column id="nameColu1mn33">
+                        <m:Text text="Cantidad Entregada" id="na2meColumnTitle33"/>
+                    </m:Column>
+                    <m:Column id="nameC3olumn33">
+                        <m:Text text="Cantidad Pend. Entrega" id="na4meColumnTitle33"/>
+                    </m:Column>
+                    <m:Column id="nameColumn123">
+                        <m:Text text="Fecha Entrega" id="nameColumnTitle123"/>
+                    </m:Column>
+                    <m:Column id="nameColumdn3">
+                        <m:Text text="Grupo Articulo" id="nameColumdnTitle3"/>
+                    </m:Column>
+                    <m:Column id="nameCsolumn3">
+                        <m:Text text="Centro" id="namesColumnTitle3"/>
+                    </m:Column>
+                    <m:Column id="nam1eCsolumn3">
+                        <m:Text text="Urg. Por Necesidad" id="na2mesColumnTitle3"/>
+                    </m:Column>
+                </m:columns>
+
+                <m:items>
+                    <m:ColumnListItem id="_IDGenColumnListItem1">
+                        <m:cells>
+                            <m:ObjectIdentifier id="_IDGenObj2ectIdentifier1"
+                            title="{TestModel>Pos}"/>
+                            <m:ObjectIdentifier id="_IDGenObjectIdentifier1"
+                            title="{TestModel>Mat}"/>
+                            <m:ObjectIdentifier id="Texto"
+                            title="{TestModel>Texto}"/>
+                            <m:ObjectIdentifier id="Cant"
+                            title="{TestModel>Cant}"/>
+                            <m:ObjectIdentifier id="Ca1nt"
+                            title="{TestModel>CantSol}"/>
+                            <m:ObjectIdentifier id="Ca2nt"
+                            title="{TestModel>CantPend}"/>
+                            <m:ObjectIdentifier id="FechEntre"
+                            title="{TestModel>FechEntre}"/>
+                            <m:ObjectIdentifier id="GrupoArt"
+                            title="{TestModel>GrupoArt}"/>
+                            <m:ObjectIdentifier id="Centro"
+                            title="{TestModel>Centro}"/>
+                            <m:ObjectIdentifier id="Cen1tro"
+                            title="{TestModel>Urg}"/>
+                        </m:cells>
+                    </m:ColumnListItem>
+                </m:items>
+                </m:Table>
+                </m:IconTabFilter>
+                
+        </m:items>
+        </m:IconTabBar>
+        
+</semantic:SemanticPage>
+
+</mvc:View>

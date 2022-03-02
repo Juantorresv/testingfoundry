@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover
+		id="myPopover"
+		title="Información"
+		class="sapUiContentPadding"
+		placement="Bottom" >
+		<content>
+			<Title text="Generado el día: 02-03-2022" />
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

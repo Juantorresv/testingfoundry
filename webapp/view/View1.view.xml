@@ -1,0 +1,196 @@
+<mvc:View
+    controllerName="cl.arauco.mmlog.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout">
+
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <f:DynamicPage id="_IDGenDynamicPage1" headerExpanded="true" showFooter="false">
+         <f:header>
+         <f:DynamicPageHeader>
+         <fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true">
+            <fb:filterGroupItems>
+            <fb:FilterGroupItem groupName="__$INTERNAL$" name="2B" label="Tipo Usuario" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text" value="Usuario Básico">
+							<core:Item key="USR1" text="Usuario Básico" />
+                            <core:Item key="USR2" text="Usuario Experto" />
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                <fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="N° Pedido" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text">
+							<items>
+							</items>
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                <fb:FilterGroupItem groupName="__$INTERNAL$" name="C" label="Centro" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text">
+							<items>
+							</items>
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                <fb:FilterGroupItem groupName="__$INTERNAL$" name="D" label="Material" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text">
+							<items>
+							</items>
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                <fb:FilterGroupItem groupName="__$INTERNAL$" name="DD" label="Grupo de Compra" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text">
+							<items>
+							</items>
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                <fb:FilterGroupItem groupName="__$INTERNAL$" name="TTD" label="Tipo Imputación" labelTooltip="Tooltip Example" mandatory="true" partOfCurrentVariant="true" visibleInFilterBar="true">
+					<fb:control>
+						<ComboBox type="Text">
+							<items>
+							</items>
+						</ComboBox>
+					</fb:control>
+				</fb:FilterGroupItem>
+                </fb:filterGroupItems>
+                </fb:FilterBar>
+                </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+			<!-- <smartTable:SmartTable id="LineItemsSmartTable" 
+                                   entitySet="Orders" 
+                                   smartFilterId="smartFilterBar" 
+                                   tableType="ResponsiveTable" 
+                                   useExportToExcel="false" 
+                                   beforeRebindTable="onBeforeRebinTable"
+                                   beforeExport="onBeforeExport" 
+                                   useVariantManagement="false" 
+                                   useTablePersonalisation="false"
+                                   showTablePersonalisation="false" 
+                                   header="Pedidos" 
+                                   showRowCount="true" 
+                                   persistencyKey="SmartTableAnalytical_Explored" 
+                                   enableAutoBinding="true" 
+                                   demandPopin="true"
+                                   initiallyVisibleFields="OrderID,CustomerID,OrderDate"
+                                   class="sapUiResponsiveContentPadding">
+            
+                                   
+            </smartTable:SmartTable> -->
+            <Table
+                id="table"
+                width="auto"
+                items="{
+                    path: 'TestModel>/ItemsMaster'
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+                <columns>
+                    <Column id="nameCsolumn" hAlign="Center">
+                        <Text text="Favorito" id="nameColumsnTitle"/>
+                    </Column>
+                    <Column id="nameColumn" hAlign="Center">
+                        <Text text="Nº Pedido" id="nameColumnTitle"/>
+                    </Column>
+                    <Column id="unitNumberColumn24" visible="false"  >
+                        <Text text="Fecha de entrega" id="unitNumberColumnTitle24"/>
+                    </Column>
+                    <Column id="unitNumberColumn25" hAlign="Center" >
+                        <Text text="Proveedor" id="unitNumberColumnTitle25"/>
+                    </Column>
+                    <Column id="unitNumberColumn211" hAlign="Center" >
+                        <Text text="Centro" id="unitNumberColumnTitle211"/>
+                    </Column>
+                    <Column id="unitNumberColumn288" hAlign="Center" >
+                        <Text text="Grupo de compra" id="unitNumberColumnTitle288"/>
+                    </Column>
+                    <Column id="unitNumberColumn215" hAlign="Center" >
+                        <Text text="INCOTERM" id="unitNumberColumnTitle215"/>
+                    </Column>
+                    <Column id="unitNumberColumn2135" hAlign="Center" >
+                        <Text text="Vía" id="unitNumberColumnTitle2215"/>
+                    </Column>
+                    <Column id="unitNumberColumn21235" hAlign="Center" >
+                        <Text text="Interlocutor" id="unitNumberColumnTitle22215"/>
+                    </Column>
+                    <Column id="unitNumbersColumn21235" hAlign="Center" >
+                        <Text text="Operador Logistico" id="unistNumberColumnTitle22215"/>
+                    </Column>
+                    <Column id="unit2NumbersColumn21235" hAlign="Center">
+                        <Text text="Entregas" id="uni1stNumberColumnTitle22215"/>
+                    </Column>
+                    <Column id="unitNumberColumn" hAlign="Center">
+                        <Text text="Status Pedido" id="unitNsssumberColumnTitle"/>
+                    </Column>
+                    <!--<Column id="unitNumberColumn" hAlign="End">
+                        <Text text="Prioridad" id="unitNumberColumnTitle"/>
+                    </Column> -->
+                </columns>
+
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1"
+                        type="Navigation"
+                        press=".onPressNav">
+                        <cells>
+                            <Button icon="{TestModel>Fav}" />
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1"
+                            title="{TestModel>OrderID}"/>
+                            <ObjectStatus id="_IDGenObjectIdentifier12"
+                            text="{TestModel>FechaEnt}" state="{TestModel>State}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier125"
+                            title="{TestModel>Proveedor}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier115"
+                            title="{TestModel>Centro}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1354"
+                            title="{TestModel>GrupoComp}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1255"
+                            title="{TestModel>Incoterm}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier12552"
+                            title="{TestModel>Via}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier125252"
+                            title="{TestModel>Interlocutor}"/>
+                            <ObjectIdentifier id="_IDGsenObjectIdentifier125252"
+                            title="{TestModel>OpeLog}"/>
+                            <VBox> 
+                            <core:Icon id="_IDGsenObje2ctIdentifier125252"
+                            src="{TestModel>IconEntregas}"/>
+                            <Text visible="false" text="Enviado"/>
+                            </VBox>
+                            <VBox> 
+                            <core:Icon id="_IDGsenObje2cssstIdentifier125252"
+                            src="{TestModel>IconEntregasPed}"/>
+                            <Text visible="true" text="{TestModel>TextPed}"/>
+                            </VBox>
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                </Table>
+                
+            
+        </f:content>
+
+        </f:DynamicPage>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
